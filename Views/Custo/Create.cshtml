@@ -1,0 +1,49 @@
+﻿@model miguel.Models.Dominio.Custo
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Custo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="mobra" class="control-label"></label>
+                <input asp-for="mobra" class="form-control" />
+                <span asp-validation-for="mobra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vfornecedor" class="control-label"></label>
+                <input asp-for="vfornecedor" class="form-control" />
+                <span asp-validation-for="vfornecedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dias" class="control-label"></label>
+                <input asp-for="dias" class="form-control" />
+                <span asp-validation-for="dias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="problema" class="control-label"></label>
+                <input asp-for="problema" class="form-control" />
+                <span asp-validation-for="problema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

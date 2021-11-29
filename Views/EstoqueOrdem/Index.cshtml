@@ -1,0 +1,30 @@
+﻿@model IEnumerable<miguel.Models.Dominio.EstoqueOrdem>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <button type="button" class="btn btn-primary"><a asp-action="Edit" asp-route-id="@item.id">Edit</a>  </button>
+                <button type="button" class="btn btn-light"><a asp-action="Details" asp-route-id="@item.id">Detalhes</a>  </button>|
+                <button type="button" class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.id">Deletar</a>  </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

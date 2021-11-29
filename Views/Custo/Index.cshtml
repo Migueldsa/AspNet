@@ -1,0 +1,63 @@
+﻿
+@model IEnumerable<miguel.Models.Dominio.Custo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<nav class="black">
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="Custo">Custo</a></li>
+            <li><a href="Ordem">Ordens</a></li>
+            <li><a href="Estoque">Estoque</a></li>
+        </ul>
+    </div>
+</nav>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.mobra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vfornecedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.problema)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vfornecedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.problema)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary"><a asp-action="Edit" asp-route-id="@item.id">Edit</a>  </button>
+                <button type="button" class="btn btn-light"><a asp-action="Details" asp-route-id="@item.id">Detalhes</a>  </button>|
+                <button type="button" class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.id">Deletar</a>  </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
